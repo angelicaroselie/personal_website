@@ -1,0 +1,27 @@
+#HTTPS-direct: angelicaroselie.com
+RewriteEngine On 
+RewriteCond %{HTTP_HOST} ^angelicaroselie.com [NC,OR]
+RewriteCond %{HTTP_HOST} ^www.angelicaroselie.com [NC]
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+#HTTPS-direct ends
+# mod_rewrite starts here
+
+RewriteEngine On
+RewriteBase /
+
+#www to non
+RewriteCond %{HTTP_HOST} ^www\.(([a-z0-9_]+\.)?domain\.com)$ [NC]
+RewriteRule ^(.+?)/?$ http://%1/$1/ [R=301,L]
+
+RewriteCond %{THE_REQUEST} \s/+(.+?)\.html/?[\s?] [NC]
+RewriteRule ^ /%1/ [R=301,NE,L]
+
+
+#index redirect
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.html\ HTTP/
+RewriteRule ^index\.html$ http://%{HTTP_HOST}/ [R=301,L]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI}.html -f
+RewriteRule (.*) $1.html [L]

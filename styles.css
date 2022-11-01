@@ -1,0 +1,521 @@
+/* Reset browser formatting */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Root pseudo class for variables - changing site color theme here, easy to maintain */
+:root {
+  /* headers, highlighted, hearts, nav highlights, nav link active */
+  --main-header-color: #FE68E6;
+  /* background */
+  --main-bg-color: #ffd1f7;
+  /* text and footer */
+  --main-text-color: #8b0475;
+  /* link coloring */
+  --main-link-color: rgb(210, 82, 214);
+  /* link hovering */
+  --link-hover-color: magenta;
+  /* transition duration when hovering a nav link */
+  --link-transition-duration: 500ms;
+  /* navbar background */
+  --navbar-bg-color: #FF98EF;
+  /* navbar link */
+  --navbar-link-color: #ffffff;
+  /* gig table past gigs */
+  --past-gigs-color: #e191f5;
+}
+
+/* Fonts etc. */
+body {
+  background: var(--main-bg-color);
+  margin: auto;
+  font-family: "Nanum Gothic", sans-serif;
+}
+
+main {
+  width: 85%;
+  margin: auto;
+}
+
+/* Header styling */
+h1 {
+  color: var(--main-header-color);
+  text-align: center;
+  font-size: 34px;
+  padding-bottom: 25px;
+  font-family: "Petit Formal Script", cursive;
+}
+
+h2 {
+  color: var(--main-header-color);
+  text-align: left;
+  font-size: 25px;
+  padding: 15px 0px 15px 0px;
+  margin: 35px 0px 10px 0px;
+}
+
+h3 {
+  color: var(--main-header-color);
+  font-size: 150%;
+  padding: 15px 0px 10px 0px;
+  margin: 30px 0px 10px 0px;
+}
+
+h4 {
+  color: var(--main-header-color);
+  font-size: 120%;
+  padding: 10px 0px 10px 0px;
+  margin: 10px 0px 10px 0px;
+}
+
+
+/* line through */
+
+.overline {
+  text-decoration: line-through;
+}
+
+/* lists */
+li {
+  color: var(--main-text-color);
+}
+
+
+p {
+  color: var(--main-text-color);
+  text-align: justify;
+  text-justify: inter-word;
+  margin-bottom: 25px;
+  font-size: 16px;
+  line-height: 28px;
+}
+
+
+/* Link elements color and hovered color */
+
+a {
+  text-decoration: none;
+  color: var(--main-link-color);
+}
+
+a:hover {
+  color: var(--link-hover-color);
+  text-decoration: underline;
+}
+
+
+/* Footer styling-------------------------------- */
+.footer {
+  color: var(--main-text-color);
+  margin: 30px 0px 15px 0px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Header containing background image ----------------------------- */
+.header {
+  background-image: url(pictures/sakurabanner.jpg);
+  background-position: center;
+  padding: 25px 20px 5px 20px;
+  text-align: center;
+}
+
+/* Text in the header part - styling */
+.headertext {
+  color: var(--main-header-color);
+  font-family: "Petit Formal Script", cursive;
+  text-align: center;
+  padding-bottom: 25px;
+  font-size: 40px;
+}
+
+
+/* Highlight text, used in GitHub links etc ------------------------------------- */
+.highlighted {
+  color: var(--main-header-color);
+  font-size: 25px;
+}
+
+
+/* Contact details pic in the social page */
+.contact {
+  width: 350px;
+  max-width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  margin-bottom: 100px;
+}
+
+/* Pictures -------------------------------------------- */
+
+/* All imgs rounded corners */
+
+img {
+  border-radius: 12px;
+}
+
+/* Override bootstrap image size on DJ-pic and profile pic */
+
+/* index pic centered to be in middle of the bootstrap col */
+.indexpic {
+  width: 100%;
+  max-width: 250px;
+  min-width: 200px;
+  display: block;
+  margin: auto;
+}
+
+.djpicture {
+  width: 100%;
+  max-width: 300px;
+  float: right;
+  margin: 0px 0px 10px 20px;
+}
+
+.profilepic {
+  width: 100%;
+  max-width: 300px;
+  float: right;
+  margin: 5px 0px 10px 30px;
+}
+
+/* Styling the centered bootstrap navbar ------------------------------- */
+
+/*
+background-image: linear-gradient(to right, #20051f, #180011); */
+
+.navbar {
+  background-color: var(--navbar-bg-color);
+  margin-bottom: 20px;
+  font-size: 120%;
+  padding: 0px;
+  box-shadow: 0 2px 2px -2px var(--navbar-bg-color);
+}
+
+/* Styling link text color for bootstrap navbar */
+
+.navtext {
+  color: var(--navbar-link-color);
+}
+
+.active {
+  color: var(--main-header-color);
+}
+
+.navbar li a:hover {
+  color: var(--main-header-color);
+  transition-duration: var(--link-transition-duration);
+  text-decoration: none;
+}
+
+
+
+/* ------------------------------------------------------- */
+
+/* --------------------- DJ page --------------------------*/
+
+
+/* Unordered heartlist for bio and DJ --------------------------------------------- */
+
+.heartlist ul {
+  list-style: none;
+}
+
+/* Unordered heartlist for bio and DJ - Position absolute and negative margin to stop heart bullet from interrupting the flow of the text */
+
+.heartlist ul li:before {
+  content: "\2661";
+  color: var(--main-header-color);
+  font-size: 24px;
+  position: absolute;
+  margin-left: -1em;
+}
+
+/* Unordered heartlist for bio and DJ - Position relative, so heartlist is aligned properly */
+
+.heartlist li {
+  font-size: 24px;
+  position: relative;
+  margin-top: 2px;
+}
+
+
+/* Smaller heartlist. Unordered heartlist for DJ, smaller one, same rules applies than in bigger list */
+
+.heartlistsmall ul {
+  list-style: none;
+}
+
+.heartlistsmall ul li:before {
+  content: "\2661";
+  color: var(--main-header-color);
+  font-size: 18px;
+  position: absolute;
+  margin-left: -1.1em;
+}
+
+.heartlistsmall li {
+  font-size: 18px;
+  position: relative;
+  padding: 1px 0px 1px 0px;
+}
+
+
+
+/* ------------------- Mixtape links and mobile show/hide section ------------------------ */
+
+/* Mixtape links for mobile show */
+
+/* .mixtapelink {
+  margin: 15px 0px 15px 24px;
+  font-size: 18px;
+}
+
+.mixtapelink:before {
+  content: "\2661";
+  color: var(--main-header-color);
+  position: absolute;
+  margin-left: -1.2em;
+} */
+
+/* For DJ page content: mobile and desktop view */
+
+/* .mobileShow {
+  display: none;
+} */
+
+/* Smartphone Portrait and Landscape */
+
+/* @media only screen and (min-width: 320px) and (max-width: 480px) {
+  .mobileShow {
+    display: inline;
+  }
+}
+
+.mobileHide {
+  display: inline;
+} */
+
+/* Smartphone Portrait and Landscape */
+
+/* @media only screen and (min-width: 320px) and (max-width: 480px) {
+  .mobileHide {
+    display: none;
+  }
+} */
+
+
+
+
+/* For DJ gig list ------------------ */
+
+
+/* Label selector to show and hide gig table lists */
+label {
+  cursor: pointer;
+}
+
+/* Gig table design */
+
+/* Styling gig parent div element  */
+
+.gigs {
+  height: 100%;
+  width: 100%;
+  display: table;
+  list-style: none;
+  margin-bottom: 25px;
+}
+
+/* Styling for the heart in DJ gig table  */
+
+.gigtablelinkdesign:before {
+  content: "\2661";
+  color: var(--main-header-color);
+  font-size: 20px;
+  position: absolute;
+  margin-left: -1em;
+}
+
+/* Styling for the label text  */
+.gigtablelinkdesign {
+  font-size: 20px;
+  position: relative;
+  margin: 5px 0px 10px 24px;
+  color: var(--main-text-color);
+}
+
+
+
+/* FUNCTIONALITY for the Gig table ------------------------------------s-- */
+
+/* These are for 2020 - 2022 content list. To show and hide tables when show/hide checkbox element is clicked  */
+
+
+
+/* In default we keep labelHide hidden */
+.defaultHide {
+  display: none;
+}
+
+/* styling every details element */
+details {
+  overflow: auto;
+  height: auto;
+  margin: 5px 0px 5px 0px;
+}
+
+/* We want to control summary element inside details. We want to keep cursor area over title, and we don't need any default list style mark */
+summary {
+  display: inline-flex;
+  cursor: pointer;
+  list-style: none;
+}
+
+/* When we open details element, we want to show labelHide element */
+details[open]>summary>#labelHide2022,
+details[open]>summary>#labelHide2021,
+details[open]>summary>#labelHide2020 {
+  display: list-item;
+  list-style-type: none;
+}
+
+/* When we open details element, we want to hide labelShow element */
+details[open]>summary>#labelShow2022,
+details[open]>summary>#labelShow2021,
+details[open]>summary>#labelShow2020 {
+  display: none;
+}
+
+
+/* Table element styling for DJ gigs -------------------- */
+
+th,
+td {
+  color: var(--main-text-color);
+  font-weight: 600;
+  text-align: left;
+  border-bottom: 1px solid var(--main-text-color);
+  border-top: none !important;
+  font-size: 15px;
+  padding: 10px 2px 10px 2px;
+  margin: 0px;
+}
+
+table {
+  table-layout: auto;
+  width: 90%;
+  margin-bottom: 15px;
+}
+
+/* Formatting Bootstrap class */
+
+.row {
+  margin: 0px;
+}
+
+/* Table text styling for past dates */
+
+.past td {
+  color: var(--past-gigs-color);
+  font-weight: normal;
+}
+
+
+
+
+
+/* ------------------------------------------------------ */
+
+/* -----------------  Gallery --------------------------*/
+
+/* For bootstrap?? */
+
+.selector-for-some-widget {
+  box-sizing: content-box;
+}
+
+/*  gallery styling */
+
+.newgallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+}
+
+.newgallery img {
+  margin: 10px;
+  width: 90%;
+}
+
+.gallerytext {
+  text-align: center;
+  font-family: "Petit Formal Script", cursive;
+  margin-bottom: 25px;
+}
+
+
+
+/* Mixcloud embed iframe */
+
+iframe {
+  border: 0;
+}
+
+.mixcloudembed {
+  width: 100%;
+  height: 120px;
+}
+
+
+/* Social media buttons  */
+
+.fa {
+  padding: 8px;
+  font-size: 62px;
+  min-width: 62px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+
+.fa:hover {
+  opacity: 0.7;
+  text-decoration: none;
+}
+
+.somecontainer{
+  width: 100%;
+  display: block;
+}
+
+.somebutton{
+  min-width: 55px;
+  min-height: 55px;
+}
+
+.yleareenapic{
+  max-width: 100%;
+  width: 800px;
+}
+
+/* ----------------------Test area -------------------------------- */
+
+
+/* VANHENTUNUT ????????????????????? fix later */
+/* Accessibility when printing  
+ 
+@media print {
+  nav {
+    display: none;
+  }
+
+  a[href^="http"]:after {
+    content: " ("attr(href) ")";
+  }
+}
+*/
